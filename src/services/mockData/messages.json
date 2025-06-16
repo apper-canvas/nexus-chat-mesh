@@ -1,0 +1,131 @@
+[
+  {
+    "Id": 1,
+    "channelId": 1,
+    "userId": 1,
+    "content": "Good morning everyone! Ready for another productive day?",
+    "timestamp": "2024-01-15T09:00:00Z",
+    "reactions": [
+      {
+        "emoji": "👍",
+        "users": [2, 3]
+      }
+    ],
+    "edited": false
+  },
+  {
+    "Id": 2,
+    "channelId": 1,
+    "userId": 2,
+    "content": "Absolutely! I'm excited about the new feature rollout today.",
+    "timestamp": "2024-01-15T09:15:00Z",
+    "reactions": [],
+    "edited": false
+  },
+  {
+    "Id": 3,
+    "channelId": 1,
+    "userId": 3,
+    "content": "Just pushed the latest changes to the dev branch. Everything looks good for deployment.",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "reactions": [
+      {
+        "emoji": "🎉",
+        "users": [1, 4]
+      },
+      {
+        "emoji": "✅",
+        "users": [2]
+      }
+    ],
+    "edited": false
+  },
+  {
+    "Id": 4,
+    "channelId": 2,
+    "userId": 4,
+    "content": "Can someone review the API documentation changes? I've updated the endpoints section.",
+    "timestamp": "2024-01-15T11:00:00Z",
+    "reactions": [],
+    "edited": false
+  },
+  {
+    "Id": 5,
+    "channelId": 2,
+    "userId": 1,
+    "content": "I'll take a look at it this afternoon. Thanks for updating that!",
+    "timestamp": "2024-01-15T11:15:00Z",
+    "reactions": [
+      {
+        "emoji": "👍",
+        "users": [4]
+      }
+    ],
+    "edited": false
+  },
+  {
+    "Id": 6,
+    "channelId": 3,
+    "userId": 2,
+    "content": "The new UI mockups are looking fantastic. Really love the color scheme!",
+    "timestamp": "2024-01-15T12:00:00Z",
+    "reactions": [
+      {
+        "emoji": "❤️",
+        "users": [1, 3, 4]
+      }
+    ],
+    "edited": false
+  },
+  {
+    "Id": 7,
+    "channelId": 3,
+    "userId": 5,
+    "content": "Thanks! I tried to make it more accessible while keeping it visually appealing.",
+    "timestamp": "2024-01-15T12:30:00Z",
+    "reactions": [],
+    "edited": false
+  },
+  {
+    "Id": 8,
+    "channelId": 1,
+    "userId": 4,
+    "content": "Quick reminder: We have the team standup in 30 minutes. See you all there!",
+    "timestamp": "2024-01-15T14:00:00Z",
+    "reactions": [
+      {
+        "emoji": "👍",
+        "users": [1, 2, 3]
+      }
+    ],
+    "edited": false
+  },
+  {
+    "Id": 9,
+    "channelId": 4,
+    "userId": 1,
+    "content": "Project Alpha is on track for the Q1 deadline. Great work everyone!",
+    "timestamp": "2024-01-15T15:00:00Z",
+    "reactions": [
+      {
+        "emoji": "🎉",
+        "users": [3, 4]
+      }
+    ],
+    "edited": false
+  },
+  {
+    "Id": 10,
+    "channelId": 5,
+    "userId": 3,
+    "content": "Anyone know a good coffee shop near the office? Need my caffeine fix! ☕",
+    "timestamp": "2024-01-15T16:00:00Z",
+    "reactions": [
+      {
+        "emoji": "😂",
+        "users": [1, 2]
+      }
+    ],
+    "edited": false
+  }
+]

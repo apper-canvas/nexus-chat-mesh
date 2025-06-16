@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "name": "general",
+    "type": "public",
+    "unreadCount": 3,
+    "lastMessage": "2024-01-15T14:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "development",
+    "type": "public",
+    "unreadCount": 0,
+    "lastMessage": "2024-01-15T12:15:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "design",
+    "type": "public",
+    "unreadCount": 7,
+    "lastMessage": "2024-01-15T16:45:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "project-alpha",
+    "type": "private",
+    "unreadCount": 1,
+    "lastMessage": "2024-01-15T10:20:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "random",
+    "type": "public",
+    "unreadCount": 0,
+    "lastMessage": "2024-01-15T09:30:00Z"
+  }
+]

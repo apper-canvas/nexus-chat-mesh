@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "name": "John Doe",
+    "avatar": "/avatars/john.jpg",
+    "status": "online",
+    "email": "john.doe@example.com"
+  },
+  {
+    "Id": 2,
+    "name": "Sarah Chen",
+    "avatar": "/avatars/sarah.jpg",
+    "status": "away",
+    "email": "sarah.chen@example.com"
+  },
+  {
+    "Id": 3,
+    "name": "Mike Rodriguez",
+    "avatar": "/avatars/mike.jpg",
+    "status": "busy",
+    "email": "mike.rodriguez@example.com"
+  },
+  {
+    "Id": 4,
+    "name": "Emily Johnson",
+    "avatar": "/avatars/emily.jpg",
+    "status": "online",
+    "email": "emily.johnson@example.com"
+  },
+  {
+    "Id": 5,
+    "name": "Alex Thompson",
+    "avatar": "/avatars/alex.jpg",
+    "status": "offline",
+    "email": "alex.thompson@example.com"
+  }
+]
