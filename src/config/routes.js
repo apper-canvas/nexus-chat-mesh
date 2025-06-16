@@ -2,6 +2,7 @@ import Channels from '@/components/pages/Channels'
 import DirectMessages from '@/components/pages/DirectMessages'
 import Search from '@/components/pages/Search'
 import Profile from '@/components/pages/Profile'
+import Inbox from '@/components/pages/Inbox'
 
 export const routes = {
   channels: {
@@ -10,6 +11,13 @@ export const routes = {
     path: '/channels',
     icon: 'Hash',
     component: Channels
+  },
+  inbox: {
+    id: 'inbox',
+    label: 'Inbox',
+    path: '/inbox',
+    icon: 'Mail',
+    component: Inbox
   },
   direct: {
     id: 'direct',

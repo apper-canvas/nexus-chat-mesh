@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { toast } from 'react-toastify'
-import Button from '@/components/atoms/Button'
-import ApperIcon from '@/components/ApperIcon'
-import EmojiPicker from './EmojiPicker'
-import { messageService } from '@/services'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import Button from "@/components/atoms/Button";
+import ApperIcon from "@/components/ApperIcon";
+import EmojiPicker from "./EmojiPicker";
+import { messageService } from "@/services";
 
-const MessageInput = ({ channelId, onMessageSent }) => {
+const MessageInput = ({ channelId, onMessageSent, isInboxMode = false, placeholder = "Type a message..." }) => {
   const [message, setMessage] = useState('')
   const [sending, setSending] = useState(false)
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
@@ -17,11 +17,17 @@ const MessageInput = ({ channelId, onMessageSent }) => {
 
     setSending(true)
     try {
-      const newMessage = await messageService.create({
-        channelId: parseInt(channelId, 10),
+      const messageData = {
         userId: 1, // Current user ID
         content: message.trim()
-      })
+      }
+      
+      // Add channelId only if not in inbox mode
+      if (!isInboxMode && channelId) {
+        messageData.channelId = parseInt(channelId, 10)
+      }
+      
+      const newMessage = await messageService.create(messageData)
       
       setMessage('')
       onMessageSent?.(newMessage)
@@ -47,13 +53,13 @@ const MessageInput = ({ channelId, onMessageSent }) => {
 
   return (
     <div className="border-t border-surface-700 p-4">
-      <form onSubmit={handleSubmit} className="flex items-end space-x-3">
+<form onSubmit={handleSubmit} className="flex items-end space-x-3">
         <div className="flex-1 relative">
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Type a message..."
+            placeholder={placeholder}
             className="w-full px-4 py-3 bg-surface-700 border border-surface-600 rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             rows={1}
             style={{

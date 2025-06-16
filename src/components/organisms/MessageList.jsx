@@ -5,7 +5,7 @@ import MessageItem from '@/components/molecules/MessageItem'
 import ApperIcon from '@/components/ApperIcon'
 import { messageService } from '@/services'
 
-const MessageList = ({ channelId }) => {
+const MessageList = ({ channelId, isInboxMode = false, onMessageUpdate }) => {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -17,12 +17,20 @@ const MessageList = ({ channelId }) => {
 
   useEffect(() => {
     const loadMessages = async () => {
-      if (!channelId) return
-      
       setLoading(true)
       setError(null)
       try {
-        const messageData = await messageService.getByChannelId(channelId)
+        let messageData
+        if (isInboxMode) {
+          // Load all messages for inbox mode
+          messageData = await messageService.getAll()
+        } else if (channelId) {
+          // Load channel-specific messages
+          messageData = await messageService.getByChannelId(channelId)
+        } else {
+          return
+        }
+        
         setMessages(messageData)
         setTimeout(scrollToBottom, 100)
       } catch (err) {
@@ -33,7 +41,7 @@ const MessageList = ({ channelId }) => {
       }
     }
     loadMessages()
-  }, [channelId])
+  }, [channelId, isInboxMode])
 
   const handleReactionAdd = (updatedMessage) => {
     setMessages(prev => prev.map(msg => 
@@ -41,7 +49,7 @@ const MessageList = ({ channelId }) => {
     ))
   }
 
-  const handleMessageUpdate = (updatedMessage) => {
+const handleMessageUpdate = (updatedMessage) => {
     if (updatedMessage === null) {
       // Message was deleted
       setMessages(prev => prev.filter(msg => msg.Id !== updatedMessage?.Id))
@@ -50,6 +58,8 @@ const MessageList = ({ channelId }) => {
         msg.Id === updatedMessage.Id ? updatedMessage : msg
       ))
     }
+    // Call parent handler if provided
+    onMessageUpdate?.(updatedMessage)
   }
 
   const handleNewMessage = (newMessage) => {
