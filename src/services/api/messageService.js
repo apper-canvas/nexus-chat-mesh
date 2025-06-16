@@ -95,12 +95,16 @@ const messageService = {
     return { ...message }
   },
 
-  async search(query, channelId = null) {
+async search(query, channelId = null, groupId = null) {
     await delay(350)
     let results = [...messagesData]
     
     if (channelId) {
       results = results.filter(m => m.channelId === parseInt(channelId, 10))
+    }
+    
+    if (groupId) {
+      results = results.filter(m => m.groupId === parseInt(groupId, 10))
     }
     
     if (query) {

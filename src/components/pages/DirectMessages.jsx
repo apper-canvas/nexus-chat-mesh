@@ -107,12 +107,12 @@ const DirectMessages = () => {
               animate={{ scale: 1, opacity: 1 }}
               className="text-center"
             >
-              <ApperIcon name="MessageCircle" size={64} className="text-gray-500 mx-auto mb-4" />
+<ApperIcon name="MessageCircle" size={64} className="text-gray-500 mx-auto mb-4" />
               <h2 className="text-2xl font-semibold text-white mb-2">
-                Direct Messages
+                Direct Messages & Groups
               </h2>
               <p className="text-gray-400 max-w-md">
-                Select a person from the sidebar to start a direct conversation.
+                Select a person or group from the sidebar to start a conversation.
               </p>
             </motion.div>
           </div>

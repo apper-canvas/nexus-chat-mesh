@@ -66,7 +66,7 @@ const Layout = () => {
 
         {/* Navigation */}
         <nav className="flex-1 p-2 space-y-1 overflow-y-auto custom-scrollbar">
-          {Object.values(routes).map((route) => (
+{Object.values(routes).filter(route => !route.hidden).map((route) => (
             <NavLink
               key={route.id}
               to={route.path}

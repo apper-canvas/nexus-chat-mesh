@@ -10,13 +10,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Navigate to={routes.channels.path} replace />} />
-            {routeArray.map((route) => (
+{routeArray.map((route) => (
               <Route
                 key={route.id}
                 path={route.path}
                 element={<route.component />}
               />
             ))}
+            <Route path="/direct/:userId" element={<routes.direct.component />} />
+            <Route path="/direct/group/:groupId" element={<routes.direct.component />} />
           </Route>
         </Routes>
         <ToastContainer
