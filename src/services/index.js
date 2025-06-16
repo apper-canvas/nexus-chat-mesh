@@ -4,8 +4,8 @@ export { default as messageService } from './api/messageService'
 export { default as reactionService } from './api/reactionService'
 export { default as groupConversationService } from './api/groupConversationService'
 
-export {
-  channelService,
-  userService,
-  groupConversationService
-} from './api'
+export { default as channelService } from '@/services/api/channelService'
+export { default as userService } from '@/services/api/userService'
+export { default as groupConversationService } from '@/services/api/groupConversationService'
+export { default as messageService } from '@/services/api/messageService'
+export { default as reactionService } from '@/services/api/reactionService'
